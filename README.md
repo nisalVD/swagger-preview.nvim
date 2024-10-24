@@ -10,6 +10,17 @@ A neovim plugin to live-preview Swagger files.
 
 This plugin requires [swagger-ui-watcher](https://github.com/moon0326/swagger-ui-watcher) to be installed. The default `packer.nvim` configuration will automatically install it globally.
 
+### lazy.nvim
+```lua
+
+    return {
+      "nisalVD/swagger-preview.nvim",
+      cmd = { "SwaggerPreview", "SwaggerStop", "SwaggerPreviewStop" },
+      build = "npm i",
+      config = true,
+    }
+```
+
 
 ### packer.nvim
 
@@ -17,7 +28,7 @@ This plugin requires [swagger-ui-watcher](https://github.com/moon0326/swagger-ui
 
   use {
       "vinnymeller/swagger-preview.nvim",
-      run = "npm install -g swagger-ui-watcher",
+      run = "npm i",
   }
 ```
 
@@ -26,7 +37,7 @@ This plugin requires [swagger-ui-watcher](https://github.com/moon0326/swagger-ui
 Comes with 3 commands, intended to be run from the buffer containing your Swagger file.
 
 - `:SwaggerPreview` - starts a new preview, killing any preexisting server
-- `:SwaggerPreviewStop` - stops the curent server
+- `:SwaggerPreviewStop` - stops the current server
 - `:SwaggerPreviewToggle` - turns preview on if it was off, kills it if it was on
 
 ## Configuration
@@ -45,3 +56,4 @@ require("swagger-preview").setup({
 ## Contributing
 
 This plugin does almost nothing so I don't care about style or whatever. If somebody comes across this and you need more customization, make a PR and I'll merge it as long as a) it doesnt break my defaults and b) it isn't trolling 😄 
+
